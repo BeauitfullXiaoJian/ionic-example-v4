@@ -1,0 +1,33 @@
+.container {
+    --bakground:none;
+    background-image: url(/assets/imgs/login.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.login-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+.login-input {
+    margin-bottom: 2rem;
+}
+
+.login-input ion-icon {
+    font-size: 2rem;
+    color:rgba(black,0.3);
+}
+
+.login-input ion-input {
+    margin-left: 1.5rem;
+    font-size: 1rem;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.text-muted {
+    color: rgba(0, 0, 0, 0.2);
+}

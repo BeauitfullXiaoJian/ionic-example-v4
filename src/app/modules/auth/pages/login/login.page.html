@@ -1,0 +1,33 @@
+<!--
+  App登录页面.
+-->
+<ion-content>
+    <div class="container h-100 w-100">
+        <div class="h-100 w-100 d-flex flex-column-reverse" padding-horizontal>
+            <form #form="ngForm">
+                <div class="d-flex login-input align-items-center">
+                    <ion-icon name="person"></ion-icon>
+                    <ion-input name="account" [(ngModel)]="user.account" required class="flex-grow-1" type="text"
+                        placeholder="请输入手机号"></ion-input>
+                </div>
+                <div class="d-flex login-input align-items-center">
+                    <ion-icon name="lock"></ion-icon>
+                    <ion-input name="password" [(ngModel)]="user.password" required class="flex-grow-1" type="password"
+                        placeholder="请输入密码"></ion-input>
+                </div>
+                <div>
+                    <ion-button expand="block" (click)="doLogin()" [disabled]="form.invalid">登录</ion-button>
+                </div>
+                <div padding-top>
+                    <div class="d-flex align-items-center justify-content-center" margin-top>
+                        <img height="20" src="assets/icon/favicon.png" alt="logo">
+                        <span>&nbsp;开发示例应用</span>
+                    </div>
+                    <div text-center padding>
+                        <small class="text-muted">使用即同意《用户协议》及《保护协议》</small>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</ion-content>

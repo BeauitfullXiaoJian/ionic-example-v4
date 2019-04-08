@@ -1,0 +1,40 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>首页</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event.target)">
+        <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+    <ion-list margin-top>
+        <ion-item *ngFor="let item of listDatas" button detail mode="md" (click)="goDetailPage(item)">
+            <ion-thumbnail slot="start">
+                <ion-img [src]="item.avatar"></ion-img>
+            </ion-thumbnail>
+            <ion-label>
+                <!--
+                    {
+                        avatar: "https://lorempixel.com/100/100/?24349"
+                        balance: "786.00"
+                        createdAt: "2018-04-26 06:53:21"
+                        credit: 187
+                        gender: 2
+                        id: 2
+                        mobile: "+1.469.549.0101"
+                        nick: "Leilani Wilderman"
+                        uid: 0
+                        updatedAt: "2018-04-26 06:53:21"
+                        vipLevel: 3
+                    }
+                -->
+                <h2>{{item.nick}}</h2>
+                <p>{{item.mobile}}</p>
+            </ion-label>
+        </ion-item>
+    </ion-list>
+    <ion-infinite-scroll *ngIf="page.hasNext()" (ionInfinite)="doInfinite($event.target)">
+        <ion-infinite-scroll-content></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+</ion-content>
