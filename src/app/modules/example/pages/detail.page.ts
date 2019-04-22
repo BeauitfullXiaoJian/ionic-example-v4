@@ -13,7 +13,6 @@ import { switchMap, skipWhile } from 'rxjs/operators';
              <ion-title>详情页面</ion-title>
         </ion-toolbar>
     </ion-header>
-  
     <ion-content>
         <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event.target)">
             <ion-refresher-content></ion-refresher-content>
@@ -65,5 +64,4 @@ export class DetailPage implements OnInit {
     doRefresh(refresher) {
         this.loadDatas(() => refresher.complete());
     }
-
 }

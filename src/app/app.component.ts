@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { Platform, ToastController } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { AuthService } from './services/auth.service';
 
 @Component({
     selector: 'app-root',
@@ -16,9 +17,11 @@ export class AppComponent {
         private platform: Platform,
         private splashScreen: SplashScreen,
         private statusBar: StatusBar,
-        private toastCtrl: ToastController
+        private toastCtrl: ToastController,
+        private auth: AuthService,
     ) {
         this.initializeApp();
+        this.loadData();
     }
 
     initializeApp() {
@@ -36,6 +39,13 @@ export class AppComponent {
                 }
             }, true);
         });
+    }
+
+    /**
+     * 载入必须的数据
+     */
+    loadData() {
+        this.auth.loadUserDeail();
     }
 
     showExit(e: Event) {

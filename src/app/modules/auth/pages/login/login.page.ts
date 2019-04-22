@@ -25,16 +25,10 @@ export class LoginPage {
         private auth: AuthService,
     ) { }
 
-    ionViewDidLoad() {
-        console.log('ionViewDidLoad LoginPage');
-    }
-
     /**
      * 登入方法
      */
     async doLogin() {
-
-        console.log(1111);
 
         // 开启加载动画
         const loader = await this.loadingCtrl.create({ message: '正在登入...' });

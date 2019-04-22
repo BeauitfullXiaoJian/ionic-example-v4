@@ -30,8 +30,11 @@ export class AuthService {
     }
 
 
+    /**
+     * 获取当前用户信息
+     */
     loadUserDeail() {
-        this.request.url('/info')
+        this.request.url('/managerapi/info')
             .subscribe(res => this.user = res.datas);
     }
 

@@ -1,9 +1,92 @@
-<ion-header>
+<!-- <ion-header>
   <ion-toolbar>
     <ion-title>我的</ion-title>
   </ion-toolbar>
-</ion-header>
+</ion-header> -->
 
 <ion-content>
-
+    <!-- {
+    "id": 1,
+    "roleId": 15,
+    "avatar": "https://......jpg",
+    "account": "admin",
+    "isActive": 1,
+    "role": { "id": 15, "roleParentId": 1, "roleName": "预览人员" }
+  } -->
+    <div class="white-container">
+        <div class="user-container">
+            <div text-right class="toolbar">
+                <ion-button slot="icon-only" fill="clear" style="height:25px;">
+                    <ion-icon name="settings" color="light"></ion-icon>
+                </ion-button>
+            </div>
+            <div text-center>{{auth.user?.account}}</div>
+            <div class="user-avatar-pad position-relative">
+                <img height="70" width="70" class="user-avatar" [src]="auth.user?.avatar">
+            </div>
+        </div>
+        <div class="menu-container d-flex justify-content-around flex-wrap">
+            <div class="menu-item" margin-bottom>
+                <div text-center>
+                    <ion-icon color="danger" name="logo-angular"></ion-icon>
+                </div>
+                <div text-center>
+                    Angular
+                </div>
+            </div>
+            <div class="menu-item" margin-bottom>
+                <div text-center>
+                    <ion-icon color="primary" name="ios-appstore"></ion-icon>
+                </div>
+                <div text-center>AppStore</div>
+            </div>
+            <div class="menu-item" margin-bottom>
+                <div text-center>
+                    <ion-icon color="secondary" name="boat"></ion-icon>
+                </div>
+                <div text-center>Boat</div>
+            </div>
+            <div class="menu-item" margin-bottom>
+                <div text-center>
+                    <ion-icon color="primary" name="briefcase"></ion-icon>
+                </div>
+                <div text-center>Briefcase</div>
+            </div>
+            <div class="menu-item" margin-bottom>
+                <div text-center>
+                    <ion-icon color="secondary" name="football"></ion-icon>
+                </div>
+                <div text-center>Football</div>
+            </div>
+            <div class="menu-item" margin-bottom>
+                <div text-center>
+                    <ion-icon color="danger" name="easel"></ion-icon>
+                </div>
+                <div text-center>Easel</div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <ion-list>
+        <ion-item button detail mode="md">
+            <ion-icon color="primary" slot="start" name="download"></ion-icon>
+            <ion-label>下载缓存</ion-label>
+        </ion-item>
+        <ion-item button detail mode="md">
+            <ion-icon color="primary" slot="start" name="videocam"></ion-icon>
+            <ion-label>直播预约</ion-label>
+        </ion-item>
+        <ion-item button detail mode="md">
+            <ion-icon color="primary" slot="start" name="share"></ion-icon>
+            <ion-label>分享客户端</ion-label>
+        </ion-item>
+        <ion-item button detail mode="md">
+            <ion-icon color="primary" slot="start" name="paper-plane"></ion-icon>
+            <ion-label>意见反馈</ion-label>
+        </ion-item>
+        <ion-item button detail mode="md">
+            <ion-icon color="primary" slot="start" name="settings"></ion-icon>
+            <ion-label>设置</ion-label>
+        </ion-item>
+    </ion-list>
 </ion-content>
